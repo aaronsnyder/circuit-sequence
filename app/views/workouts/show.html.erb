@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @workout.title %>
+</p>
+
+<p>
+  <strong>Park Name:</strong>
+  <%= @workout.park_name %>
+</p>
+
+<%= link_to 'Back', workouts_path %>
+| <%= link_to 'Edit', edit_workout_path(@workout) %>
