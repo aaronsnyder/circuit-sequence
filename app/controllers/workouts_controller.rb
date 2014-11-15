@@ -1,5 +1,7 @@
 class WorkoutsController < ApplicationController
 
+	http_basic_authenticate_with name: "kasey", password: "secret"
+
 	def new
 	  @workout = Workout.new
 	end

@@ -8,5 +8,11 @@
   <%= @workout.park_name %>
 </p>
 
+<h2>Stations</h2>
+<%= render @workout.stations %>
+
+<h2>Add a station:</h2>
+<%= render "stations/form" %>
+
 <%= link_to 'Back', workouts_path %>
 | <%= link_to 'Edit', edit_workout_path(@workout) %>
