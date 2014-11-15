@@ -1,0 +1,10 @@
+<p>
+	<strong>Name:</strong>
+	<%= exercise.name %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Exercise', [exercise.station, exercise],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
