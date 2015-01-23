@@ -11,13 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115004600) do
+ActiveRecord::Schema.define(version: 20150123180436) do
+
+  create_table "exercise_instances", force: true do |t|
+    t.integer  "station_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "exercise_instances", ["exercise_id"], name: "index_exercise_instances_on_exercise_id", using: :btree
+  add_index "exercise_instances", ["station_id", "exercise_id"], name: "index_exercise_instances_on_station_id_and_exercise_id", unique: true, using: :btree
+  add_index "exercise_instances", ["station_id"], name: "index_exercise_instances_on_station_id", using: :btree
 
   create_table "exercises", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "station_exercises", force: true do |t|
+    t.integer  "station_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "station_exercises", ["exercise_id"], name: "index_station_exercises_on_exercise_id", using: :btree
+  add_index "station_exercises", ["station_id", "exercise_id"], name: "index_station_exercises_on_station_id_and_exercise_id", unique: true, using: :btree
+  add_index "station_exercises", ["station_id"], name: "index_station_exercises_on_station_id", using: :btree
 
   create_table "stations", force: true do |t|
     t.string   "name"
@@ -27,14 +49,7 @@ ActiveRecord::Schema.define(version: 20141115004600) do
     t.datetime "updated_at"
   end
 
-  add_index "stations", ["workout_id"], name: "index_stations_on_workout_id"
-
-  create_table "stations_exercises", force: true do |t|
-    t.integer "stations_id"
-    t.integer "exercises_id"
-  end
-
-  add_index "stations_exercises", ["stations_id", "exercises_id"], name: "index_stations_exercises_on_stations_id_and_exercises_id"
+  add_index "stations", ["workout_id"], name: "index_stations_on_workout_id", using: :btree
 
   create_table "workouts", force: true do |t|
     t.string   "title"

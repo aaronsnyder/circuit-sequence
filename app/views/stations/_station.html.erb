@@ -8,6 +8,13 @@
 	<%= station.location %>
 </p>
 
+<% if station.exercises.any? %>
+	<h4>Exercises</h4>
+	<ol>
+		<%= render partial: "stations/exercise_instance", collection: station.exercises, :as => :exercise %>
+	</ol>
+<% end %>
+
 <p>
   <%= link_to 'Destroy Station', [station.workout, station],
                method: :delete,
