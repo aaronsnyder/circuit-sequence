@@ -1,7 +1,5 @@
 class StationsController < ApplicationController
 
-	http_basic_authenticate_with name: "kasey", password: "secret"
-
 	def create
 		@workout = Workout.find(params[:workout_id])
 		@station = @workout.stations.create(station_params)
