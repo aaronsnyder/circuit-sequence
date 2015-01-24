@@ -10,6 +10,3 @@ development:
 
 production:
   adapter: postgresql
-  host: localhost
-  username: amaomuofdtguta
-  database: d914pt05hh78bi
