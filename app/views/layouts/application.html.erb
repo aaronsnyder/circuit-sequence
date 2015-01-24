@@ -10,10 +10,10 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 	  	<div class="navbar-header">
-	      <a class="navbar-brand" href="/">Circuit Sequence</a>
+	      <%= link_to 'Circuit Sequence', welcome_index_path, class: "navbar-brand" %>
 	      <ul class="nav navbar-nav">
-	        <li><a href="workouts">Workouts</a></li>
-	        <li><a href="exercises">Exercises</a></li>
+	        <li><%= link_to 'Workouts', workouts_path %></li>
+	        <li><%= link_to 'Exercises', exercises_path %></li>
 	      </ul>
 	    </div>
 	  </div>
