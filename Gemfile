@@ -38,3 +38,6 @@ gem 'spring',        group: :development
 
 # Use MySql
 gem 'mysql2'
+
+# Use PG
+gem 'pg'
