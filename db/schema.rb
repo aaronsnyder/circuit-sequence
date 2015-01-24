@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150123180436) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "exercise_instances", force: true do |t|
     t.integer  "station_id"
     t.integer  "exercise_id"
@@ -29,17 +32,6 @@ ActiveRecord::Schema.define(version: 20150123180436) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "station_exercises", force: true do |t|
-    t.integer  "station_id"
-    t.integer  "exercise_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "station_exercises", ["exercise_id"], name: "index_station_exercises_on_exercise_id", using: :btree
-  add_index "station_exercises", ["station_id", "exercise_id"], name: "index_station_exercises_on_station_id_and_exercise_id", unique: true, using: :btree
-  add_index "station_exercises", ["station_id"], name: "index_station_exercises_on_station_id", using: :btree
 
   create_table "stations", force: true do |t|
     t.string   "name"
