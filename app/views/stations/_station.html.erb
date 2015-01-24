@@ -1,22 +1,24 @@
-<p>
-	<strong>Name:</strong>
-	<%= station.name %>
-</p>
+<div class="station well">
+	<p>
+		<strong>Name:</strong>
+		<%= station.name %>
+	</p>
 
-<p>
-	<strong>Location:</strong>
-	<%= station.location %>
-</p>
+	<p>
+		<strong>Location:</strong>
+		<%= station.location %>
+	</p>
 
-<% if station.exercises.any? %>
-	<h4>Exercises</h4>
-	<ol>
-		<%= render partial: "stations/exercise_instance", collection: station.exercises, :as => :exercise %>
-	</ol>
-<% end %>
+	<% if station.exercises.any? %>
+		<h4>Exercises</h4>
+		<ol>
+			<%= render partial: "stations/exercise_instance", collection: station.exercises, :as => :exercise %>
+		</ol>
+	<% end %>
 
-<p>
-  <%= link_to 'Destroy Station', [station.workout, station],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+	<p>
+	  <%= link_to 'Destroy Station', [station.workout, station],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	</p>	
+</div>

@@ -1,18 +1,30 @@
+
 <p>
-  <strong>Title:</strong>
-  <%= @workout.title %>
+  <h1><%= @workout.title %></h1>
 </p>
 
 <p>
-  <strong>Park Name:</strong>
+  <strong>Location:</strong>
   <%= @workout.park_name %>
 </p>
 
-<h2>Stations</h2>
-<%= render @workout.stations %>
+<p>
+  <strong>Date:</strong>
+</p>
 
-<h2>Add a station:</h2>
-<%= render "stations/form" %>
+<div class="well">
+	<% if @workout.stations.any? %>
+			<h2>Stations</h2>
+			<!-- <div class="stations-wrapper">
+				<div class="station-wrapper"> -->
+					<%= render @workout.stations %>
+				<!-- </div>
+			</div> -->
+	<% end %>
+	<div style="clear:both;" />
+	<h4>Add a station</h4>
+	<%= render "stations/form" %>
+</div>
 
 <%= link_to 'Back', workouts_path %>
-| <%= link_to 'Edit', edit_workout_path(@workout) %>
+| <%= link_to 'Edit', edit_workout_path(@workout) %>	
