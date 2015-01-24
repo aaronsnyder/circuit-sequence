@@ -2,6 +2,7 @@ class Station < ActiveRecord::Base
   belongs_to :workout
   has_many :exercise_instances, dependent: :destroy
   has_many :exercises, through: :exercise_instances
+  default_scope {order('created_at asc')}
 
   # Follows a user.
   def addExercise(exercise)
