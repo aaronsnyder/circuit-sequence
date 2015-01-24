@@ -8,9 +8,12 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'shared/header_navigation' %>
+	<%= render 'layouts/header_navigation' %>
 	<div class="container">
 		<%= yield %>
 	</div>
 </body>
+<% if Rails.env.production? %>
+	<%= render 'layouts/google_analytics' %>
+<% end %>
 </html>
