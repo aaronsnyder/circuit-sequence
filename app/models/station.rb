@@ -6,16 +6,6 @@ class Station < ActiveRecord::Base
 
   before_save :uppercase_name
 
-  # Follows a user.
-  def addExercise(exercise)
-    active_relationships.create(followed_id: other_user.id)
-  end
-
-  # Unfollows a user.
-  def removeExercise(exercise)
-    active_relationships.find_by(followed_id: other_user.id).destroy
-  end
-
   private
 
     # Uppercases entire name string

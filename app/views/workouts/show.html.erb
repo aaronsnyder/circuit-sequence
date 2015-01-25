@@ -14,12 +14,8 @@
 
 <div class="well">
 	<% if @workout.stations.any? %>
-			<h2>Stations</h2>
-			<!-- <div class="stations-wrapper">
-				<div class="station-wrapper"> -->
-					<%= render @workout.stations %>
-				<!-- </div>
-			</div> -->
+		<h2>Stations</h2>
+		<%= render @workout.stations %>
 	<% end %>
 	<div style="clear:both;" />
 	<h4>Add a station</h4>
@@ -27,4 +23,5 @@
 </div>
 
 <%= link_to 'Back', workouts_path %>
-| <%= link_to 'Edit', edit_workout_path(@workout) %>	
+| <%= link_to 'Edit', edit_workout_path(@workout) %>
+

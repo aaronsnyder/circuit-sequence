@@ -16,6 +16,7 @@ class WorkoutsController < ApplicationController
 
 	def show
 	  @workout = Workout.find(params[:id])
+	  @all_exercises = Exercise.order('name ASC').all()
 	end
 
 	def edit

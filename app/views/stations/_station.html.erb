@@ -16,6 +16,16 @@
 		</ol>
 	<% end %>
 
+	<hr />
+
+	<h5>Add New Exercise</h5>
+	<!-- TODO: add remote form for this shit  -->
+		<select name="exercise_to_add">
+			<%= render partial: "exercises/select_exercise_instance", collection: @all_exercises, :as => :this_exercise %>
+		</select>
+		<button>Add</button>
+	
+
 	<p>
 	  <%= link_to 'Destroy Station', [station.workout, station],
 	               method: :delete,

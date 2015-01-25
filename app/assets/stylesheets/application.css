@@ -15,14 +15,10 @@
  *= require bootstrap.min
  */
 
- /*.stations-wrapper {
- 	display:table;
- 	width:100%;
- }
- .station-wrapper {
- 	display: table-row;
- }*/
- .station {
- 	/*display: table-cell;*/
- 	background-color: #eee;
- }
+.station {
+	background-color: #eee;
+}
+
+.station hr {
+	border-color: #aaa;
+}
