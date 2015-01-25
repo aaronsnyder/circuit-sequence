@@ -1,5 +1,4 @@
 class StationsController < ApplicationController
-
 	def create
 		@workout = Workout.find(params[:workout_id])
 		@station = @workout.stations.create(station_params)
@@ -14,7 +13,8 @@ class StationsController < ApplicationController
 	end
 
 	private
+
 		def station_params
-		params.require(:station).permit(:name, :location)
-	end
+			params.require(:station).permit(:name, :location)
+		end
 end
