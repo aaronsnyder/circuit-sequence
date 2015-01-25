@@ -21,7 +21,11 @@
 	<hr />
 
 	<h5>Attach Exercise</h5>
-	<%= render 'exercise_instance/form', station: station %>
+	<% if @unused_exercises.any? %>
+		<%= render 'exercise_instance/form', station: station %>
+	<% else %>
+		<em>no unused exercises to choose from. Please add more exercises <%= link_to 'Here', new_exercise_path %></em>
+	<% end %>
 
 	<p>
 	  <%= link_to 'Destroy Station', [station.workout, station],

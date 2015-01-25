@@ -16,7 +16,11 @@ class WorkoutsController < ApplicationController
 
 	def show
 	  @workout = Workout.find(params[:id])
-	  @all_exercises = Exercise.order('name ASC').all()
+	  @used_exercises = Array.new
+	  @workout.stations.each do |station|
+	  	@used_exercises.concat station.exercises.map{|x| x.id}
+	  end
+	  @unused_exercises = Exercise.order('name ASC').where('id NOT IN (?)',@used_exercises)
 	end
 
 	def edit

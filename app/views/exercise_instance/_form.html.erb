@@ -1,6 +1,6 @@
 <form action="<%= exercise_instance_create_path %>" method="post">
 	<select name="exercise_instance[exercise_id]">
-		<%= render partial: "exercises/select_exercise_instance", collection: @all_exercises, :as => :this_exercise %>
+		<%= render partial: "exercises/select_exercise_instance", collection: @unused_exercises, :as => :this_exercise %>
 	</select>
 
 	<div style="display:none">
