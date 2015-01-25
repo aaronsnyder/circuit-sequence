@@ -8,7 +8,7 @@ class ExercisesController < ApplicationController
 	  @exercise = Exercise.new(exercise_params)
 
 	  if @exercise.save
-	  	redirect_to @exercise
+	  	redirect_to exercises_path
 	  else
 	    render 'new'
 	  end
@@ -23,13 +23,13 @@ class ExercisesController < ApplicationController
 	end
 
 	def update
-	  @exercise = Exercise.new(exercise_params)
+		@exercise = Exercise.find(params[:id])
 
-	  if @exercise.save
-	  	redirect_to @exercise
-	  else
-	    render 'edit'
-	  end
+		if @exercise.update(exercise_params)
+				redirect_to exercises_path
+		else
+				render 'edit'
+		end
 	end
 
 	def destroy
@@ -44,8 +44,9 @@ class ExercisesController < ApplicationController
 	end
 
 	private
-	def exercise_params
-		params.require(:exercise).permit(:name)
-	end
+
+		def exercise_params
+			params.require(:exercise).permit(:name)
+		end
 
 end

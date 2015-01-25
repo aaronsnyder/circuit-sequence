@@ -23,13 +23,13 @@ class WorkoutsController < ApplicationController
 	end
 
 	def update
-	  @workout = Workout.new(workout_params)
+ 		@workout = Workout.find(params[:id])
 
-	  if @workout.save
-	  	redirect_to @workout
-	  else
-	    render 'edit'
-	  end
+		if @workout.update(workout_params)
+   			redirect_to @workout
+ 		else
+   			render 'edit'
+ 		end
 	end
 
 	def destroy
@@ -44,8 +44,9 @@ class WorkoutsController < ApplicationController
 	end
 
 	private
-	def workout_params
-		params.require(:workout).permit(:title, :park_name)
-	end
+
+		def workout_params
+			params.require(:workout).permit(:title, :park_name)
+		end
 
 end
