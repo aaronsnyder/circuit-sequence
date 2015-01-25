@@ -21,11 +21,18 @@
 	<hr />
 
 	<h5>Add New Exercise</h5>
-	<!-- need a form here -->
-		<select name="exercise_id">
+	<form action="<%= exercise_instance_create_path %>" method="post">
+		<select name="exercise_instance[exercise_id]">
 			<%= render partial: "exercises/select_exercise_instance", collection: @all_exercises, :as => :this_exercise %>
 		</select>
+
+		<div style="display:none">
+			<input type="hidden" value="✓" name="utf8">
+			<input type="hidden" value="lXUlWWR5cBZ05VVCERitZZA0Mr//b8VQWluP6kXTdPU=" name="authenticity_token">
+		</div>
+		<input type="hidden" name="exercise_instance[station_id]" value="<%= station.id %>" />
 		<button>Add</button>
+	</form>
 
 	<p>
 	  <%= link_to 'Destroy Station', [station.workout, station],
