@@ -10,6 +10,8 @@
 	</p>
 
 	<% if station.exercises.any? %>
+		<hr />
+		
 		<h4>Exercises</h4>
 		<ol>
 			<%= render partial: "stations/exercise_instance", collection: station.exercises, :as => :exercise %>
@@ -19,12 +21,11 @@
 	<hr />
 
 	<h5>Add New Exercise</h5>
-	<!-- TODO: add remote form for this shit  -->
-		<select name="exercise_to_add">
+	<!-- need a form here -->
+		<select name="exercise_id">
 			<%= render partial: "exercises/select_exercise_instance", collection: @all_exercises, :as => :this_exercise %>
 		</select>
 		<button>Add</button>
-	
 
 	<p>
 	  <%= link_to 'Destroy Station', [station.workout, station],
