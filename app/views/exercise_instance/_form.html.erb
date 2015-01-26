@@ -1,12 +1,16 @@
 <form action="<%= exercise_instance_create_path %>" method="post">
-	<select name="exercise_instance[exercise_id]">
-		<%= render partial: "exercises/select_exercise_instance", collection: @unused_exercises, :as => :this_exercise %>
-	</select>
-
 	<div style="display:none">
 		<input type="hidden" value="✓" name="utf8">
 		<input type="hidden" value="lXUlWWR5cBZ05VVCERitZZA0Mr//b8VQWluP6kXTdPU=" name="authenticity_token">
 	</div>
 	<input type="hidden" name="exercise_instance[station_id]" value="<%= station.id %>" />
-	<button>Add</button>
+
+	<p>
+		<select name="exercise_instance[exercise_id]" class="fullLength">
+			<%= render partial: "exercises/select_exercise_instance", collection: @unused_exercises, :as => :this_exercise %>
+		</select>
+	</p>
+	<p>
+		<button>Add</button>
+	</p>
 </form>

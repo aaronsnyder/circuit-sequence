@@ -20,7 +20,11 @@ class WorkoutsController < ApplicationController
 	  @workout.stations.each do |station|
 	  	@used_exercises.concat station.exercises.map{|x| x.id}
 	  end
-	  @unused_exercises = Exercise.order('name ASC').where('id NOT IN (?)',@used_exercises)
+	  if @used_exercises.any?
+	  	@unused_exercises = Exercise.order('name ASC').where('id NOT IN (?)',@used_exercises)
+	  else
+	  	@unused_exercises = Exercise.order('name ASC')
+	  end
 	end
 
 	def edit

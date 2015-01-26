@@ -24,10 +24,28 @@
 }
 
 .station em {
-	display:block;
-	margin:20px;
+	display: block;
+	margin: 20px;
 }
 
 .fullLength {
-	width:100%;
+	width: 100%;
+}
+
+.whiteWell {
+	background-color: #fff;
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	margin-bottom: 20px;
+	min-height: 20px;
+	padding: 19px;
+}
+
+.navbar-brand {
+	color: #f79c13 !important;
+}
+
+.navbar-inverse {
+	background-color: #333 !important;
 }
