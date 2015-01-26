@@ -3,14 +3,14 @@
   <h1><%= @workout.title %></h1>
 </p>
 
-<p>
+<h4>
   <strong>Location:</strong>
   <%= @workout.park_name %>
-</p>
+</h4>
 
-<p>
+<h4>
   <strong>Date:</strong>
-</p>
+</h4>
 
 <div class="well">
 	<% if @workout.stations.any? %>
@@ -18,8 +18,10 @@
 		<%= render @workout.stations %>
 	<% end %>
 	<div style="clear:both;" />
-	<h4>Add a station</h4>
-	<%= render "stations/form" %>
+	<div id="addStationWrapper" class="station well">
+		<h4>Add a station</h4>
+		<%= render "stations/form" %>
+	</div>
 </div>
 
 <%= link_to 'Back', workouts_path %>

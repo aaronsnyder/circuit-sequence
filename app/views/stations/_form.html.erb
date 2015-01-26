@@ -1,11 +1,11 @@
 <%= form_for([@workout, @workout.stations.build]) do |f| %>
   <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'fullLength' %>
   </p>
   <p>
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, class: 'fullLength' %>
   </p>
   <p>
     <%= f.submit %>
