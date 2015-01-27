@@ -1,7 +1,4 @@
 class ExerciseInstancesController < ApplicationController
-  def new
-  	@exercise_instance = ExerciseInstance.new
-  end
 
   def create
   	@exercise_instance = ExerciseInstance.new(exercise_instance_params)

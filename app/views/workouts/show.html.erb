@@ -1,7 +1,4 @@
-
-<p>
-  <h1><%= @workout.title %></h1>
-</p>
+<h1><%= @workout.title %></h1>
 
 <h4>
   <strong>Location:</strong>
@@ -17,7 +14,7 @@
 		<h2>Stations</h2>
 		<%= render @workout.stations %>
 	<% end %>
-	<div style="clear:both;" />
+	
 	<div id="addStationWrapper" class="station well">
 		<h4>Add a station</h4>
 		<%= render "stations/form" %>
