@@ -1,7 +1,7 @@
 <%= form_for @new_exercise_instance do |f| %>
 	<%= f.hidden_field :station_id, :value => station.id %>
 	<p>
-		<%= f.collection_select :exercise_id, @unused_exercises,:id,:name, class: 'fullLength' %>
+		<%= f.collection_select :exercise_id, @unused_exercises,:id,:name, {}, {:class=>'fullLength'} %>
 	</p>
 	<p>
 	  <%= f.submit 'Add Exercise' %>
