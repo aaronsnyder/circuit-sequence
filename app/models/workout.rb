@@ -1,6 +1,6 @@
 class Workout < ActiveRecord::Base
 	has_many :stations, dependent: :destroy
-	validates :title, presence: true,
+	validates :name, presence: true,
 		length: { minimum: 5 }
 
 	before_save :uppercase_name
@@ -9,7 +9,7 @@ class Workout < ActiveRecord::Base
 
 	  # Uppercases entire name string
 	  def uppercase_name
-	    self.title = title.split.map(&:capitalize).join(' ')
-	    self.park_name = park_name.split.map(&:capitalize).join(' ')
+	    self.name = name.split.map(&:capitalize).join(' ')
+	    self.location = location.split.map(&:capitalize).join(' ')
 	  end
 end

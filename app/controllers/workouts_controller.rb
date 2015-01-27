@@ -56,7 +56,7 @@ class WorkoutsController < ApplicationController
 	private
 
 		def workout_params
-			params.require(:workout).permit(:title, :park_name)
+			params.require(:workout).permit(:name, :location)
 		end
 
 end
