@@ -1,16 +1,9 @@
-<form action="<%= exercise_instance_create_path %>" method="post">
-	<div style="display:none">
-		<input type="hidden" value="✓" name="utf8">
-		<input type="hidden" value="lXUlWWR5cBZ05VVCERitZZA0Mr//b8VQWluP6kXTdPU=" name="authenticity_token">
-	</div>
-	<input type="hidden" name="exercise_instance[station_id]" value="<%= station.id %>" />
-
+<%= form_for @new_exercise_instance do |f| %>
+	<%= f.hidden_field :station_id, :value => station.id %>
 	<p>
-		<select name="exercise_instance[exercise_id]" class="fullLength">
-			<%= render partial: "exercises/select_exercise_instance", collection: @unused_exercises, :as => :this_exercise %>
-		</select>
+		<%= f.collection_select :exercise_id, @unused_exercises,:id,:name, class: 'fullLength' %>
 	</p>
 	<p>
-		<button>Add</button>
+	  <%= f.submit 'Add Exercise' %>
 	</p>
-</form>
+<% end %>  

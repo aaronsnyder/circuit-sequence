@@ -25,6 +25,7 @@ class WorkoutsController < ApplicationController
 	  else
 	  	@unused_exercises = Exercise.order('name ASC')
 	  end
+	  @new_exercise_instance = ExerciseInstance.new
 	end
 
 	def edit

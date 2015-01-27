@@ -1,4 +1,4 @@
-class ExerciseInstanceController < ApplicationController
+class ExerciseInstancesController < ApplicationController
   def new
   	@exercise_instance = ExerciseInstance.new
   end

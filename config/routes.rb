@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'exercise_instance/new'
-
-  post 'exercise_instance/create'
-
   get 'welcome/index'
 
   resources :workouts do
@@ -12,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :exercises
+  resources :exercise_instances
 
   root 'welcome#index'
 end
