@@ -9,6 +9,9 @@
 </head>
 <body>
 	<%= render 'layouts/header_navigation' %>
+	<% if Rails.env.production? %>
+		<%= render 'layouts/google_adsense' %>
+	<% end %>
 	<div class="container">
 		<%= yield %>
 	</div>
