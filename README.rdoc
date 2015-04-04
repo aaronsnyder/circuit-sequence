@@ -6,4 +6,4 @@ It is being built using Ruby 2.1.2 and Rails 4.1.7.
 
 Questions?
 
-Feel free to contact me on twitter @theprgrmmr.
+Feel free to contact me on twitter @theprgrmmr
